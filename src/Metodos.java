@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Metodos {
     public static void FCADRASTRAESTATISTICA(estatistica[] estatisticas){
         Scanner sc=new Scanner(System.in);
@@ -54,7 +55,7 @@ public class Metodos {
         }
     }
 
-    public static void PMAIORMENOR(estatistica[] estatisticas){
+    public static String PMAIORMENOR(estatistica[] estatisticas){
         int i;
         String cidadeMaior="";
         String cidadeMenor="";
@@ -78,20 +79,30 @@ public class Metodos {
         }
         System.out.println("Cidade com maior numero de acidentes: "+cidadeMaior+" com "+maior+" acidentes");
         System.out.println("Cidade com menor numero de acidentes: "+cidadeMenor+" com "+menor+" acidentes");
+        String cidade=("Cidade com maior numero de acidentes: "+cidadeMaior+"\nCidade com menor numero de acidentes:"+cidadeMenor);
+        return cidade;
     }
 
-    public static void PACIMA(estatistica[] estatisticas){
+    public static String PACIMA(estatistica[] estatisticas){
         int i;
         int somaAcidentes=0;
+        long media;
+
+        String cidadesPaCima="Cidades com acidentes acima da media: ";
+
         for(i=0;i<9;i++){
             somaAcidentes+=estatisticas[i].qtdAcidentes;
         }
-        long media=somaAcidentes/10;
+
+        media=somaAcidentes/10;
+
         System.out.println("Cidades com numero de acidentes acima da media:");
         for(i=0;i<10;i++){
             if(estatisticas[i].qtdAcidentes>media){
                 System.out.println(estatisticas[i].nomeCidade);
+                cidadesPaCima+=(estatisticas[i].nomeCidade+"; ");
             }
         }
+        return cidadesPaCima;
     }
 }
