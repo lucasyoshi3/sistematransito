@@ -5,7 +5,7 @@ public class Main {
         Metodos metodos=new Metodos();
         int i;
         estatistica[] estatisticas=new estatistica[10];
-        for(i=0;i<=10;i++){
+        for(i=0;i<10;i++){
             estatisticas[i]=new estatistica();
         }
         int menu=0;
