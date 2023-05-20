@@ -7,7 +7,6 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         Metodos metodos=new Metodos();
         int i;
-        String[] maiorMenor=new String[2];
 
         String nomeArquivo="ArquivoDeTransito.txt";
         BufferedWriter escreva=new BufferedWriter(new FileWriter(nomeArquivo));
